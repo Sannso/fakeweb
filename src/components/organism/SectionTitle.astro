@@ -1,0 +1,44 @@
+---
+interface Props {
+  image: string;
+}
+const { image } = Astro.props;
+---
+
+<script>
+  const $sectionsTitle = document.querySelectorAll(".section-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(title => {
+      if(title.isIntersecting){
+        title.target.classList.add("slide-in")
+        observer.unobserve(title.target)
+      }
+    })
+  })
+
+  $sectionsTitle.forEach(sectionTitle => observer.observe(sectionTitle))
+</script>
+
+<div class="section-title w-full mb-10 overflow-hidden">
+  <img
+    class="scale-110 w-full "
+    src={`/images/${image}`}
+    alt={`Proyecto: ${image}`}
+  />
+</div>
+
+<style>
+  .section-title{
+    &.slide-in{
+      transform: translateY(250px);
+      animation: title-slide-in 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+    }
+  }
+
+  @keyframes title-slide-in {
+    100%{
+      transform: translateY(0px);
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+interface Props {
+  theme: string;
+  info: any;
+}
+
+const { theme, info } = Astro.props;
+const id = `card-${info.title.replace(/ /g, "")}`;
+const bgColor = theme === "dark" ? "bg-neutral-900" : "bg-green-500";
+const textColor = theme === "dark" ? "text-green-500" : "text-black";
+---
+
+<article
+  id={id}
+  class="flex flex-col group relative justify-between p-7 h-96 w-[335px] bg-${bgColor}"
+>
+  <div
+    class:list={[
+      "absolute top-0 left-0 h-96 w-[335px] -z-10 rounded-lg",
+      "group-hover:translate-x-9 group-hover:bg-transparent transition-all duration-[400ms] ease-in-out ",
+      bgColor,
+    ]}
+  >
+  </div>
+
+  <span
+    class:list={[
+      "absolute -left-40 top-40 uppercase -rotate-90 font-bold font w-96 h-fit text-[46px] italic opacity-0 -z-20",
+      "group-hover:opacity-100 group-hover:-left-44 transition-all duration-[400ms] ease-in-out",
+    ]}>representacion</span
+  >
+
+  <div class="relative w-full h-[70%]">
+    <img
+      class="absolute bottom-0 w-full group-hover:translate-x-10 group-hover:-translate-y-6 transition-all duration-[400ms] ease-in-out"
+      src={info.image}
+      alt=`Imagen ${info.title}`
+    />
+  </div>
+  <h2
+    class:list={[
+      "uppercase font-bold text-xl tracking-tighter leading-none w-9/12 group-hover:hidden",
+      textColor,
+    ]}
+  >
+    {info.title}
+  </h2>
+  <p class:list={[
+    "-z-20 text-md tracking-tighter leading-none w-9/12 absolute",
+    " bottom-6 ml-9"
+  ]}>
+    {info.description}
+  </p>
+</article>

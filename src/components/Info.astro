@@ -1,0 +1,37 @@
+---
+import Card from "./organism/Card.astro"
+
+const CARDS = [
+    {
+        image: "/images/handshake.webp",
+        title: "Somos pocos porque nos implicamos mucho.",
+        description: "No tenemos un roster de talentos infinito, ni queremos. Creemos en dar un servicio total a nuestros talentos, a todos ellos, sin tratos preferentes y cuidando los detalles."
+    },
+    {
+        image: "/images/rollsafe.webp",
+        title: "Somos los creativos tras los cradores.",
+        description: "fsdafsafdsaf"
+    },
+    {
+        image: "/images/phone.webp",
+        title: "Somos de los que terminan lo que empiezan.",
+        description: "asdfsadfsad"
+    }
+]
+
+---
+
+<section class="flex flex-col justify-center max-w-[1500px] mx-auto mb-32">
+  <h2 class="font-bold text-[125px] tracking-tighter leading-[0.8] max-w-7xl mx-auto ">
+    te ubicamos donde quieras estar<span class="text-green-500">.</span>
+  </h2>
+  <h3 class="font-bold text-4xl tracking-tighter pl-52 mt-4">
+    Seas una marca o un talento.
+  </h3>
+
+  <section class="grid grid-cols-3 gap-16 mt-16 mx-auto">
+    <Card theme="light" info={CARDS[0]} />
+    <Card theme="dark" info={CARDS[1]} />
+    <Card theme="light" info={CARDS[2]} />
+  </section>
+</section>

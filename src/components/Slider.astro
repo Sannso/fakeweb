@@ -1,0 +1,434 @@
+---
+import SectionTitle from "./organism/SectionTitle.astro";
+import Socials from "./organism/Socials.astro";
+import "node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+
+const TALENT = [
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+  {
+    id: "cromamen",
+    name: "Talento",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet augue sed odio sollicitudin, et dictum tortor blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et ultrices mauris, et efficitur ipsum.",
+    lema: "Polifacetico",
+    audience: "100M",
+    socials: [
+      {
+        id: "youtube",
+        url: "https://www.youtube.com",
+      },
+      {
+        id: "intagram",
+        url: "https://www.intagram.com",
+      },
+      {
+        id: "tiktok",
+        url: "https://www.tiktok.com",
+      },
+      {
+        id: "x",
+        url: "https://www.x.com",
+      },
+      {
+        id: "twitch",
+        url: "https://www.twitch.tv",
+      },
+    ],
+  },
+];
+
+const ImageTitleSlider = "talento.svg";
+---
+
+<script>
+  import Glide from "@glidejs/glide";
+
+  const $slider = document.querySelector("#talent-glide");
+  const glide = new Glide(".glide", {
+    type: "carousel",
+    startAt: 0,
+    perView: 13,
+    focusAt: "center",
+  }).mount();
+
+  $slider?.addEventListener("click", (e) => {
+    const itemSelected = e.target as HTMLElement;
+    const isItem = itemSelected.tagName === "LI";
+
+    const item = isItem ? itemSelected : itemSelected.closest("li");
+    const index = item?.dataset.indexSlide;
+
+    glide.go(`=${index}`);
+  });
+</script>
+
+<section>
+  <SectionTitle image={ImageTitleSlider} />
+
+  <article class="flex flex-col z-30 border-b-[60px] border-b-green-500">
+    <div id="talent-glide" class="glide w-full bg-green-500">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides h-20 [&>li]:flex [&>li]:justify-center">
+          {
+            TALENT.map((talento, index) => (
+              <li data-index-slide={index} class="glide__slide">
+                <img
+                  class="w-20 h-auto object-cover object-top mt-2"
+                  src="/images/deadp.webp"
+                  alt="deadpool"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-full bg-neutral-900">
+      <div class="flex flex-col items-center justify-end mr-10 h-full">
+        <div class="flex flex-col items-center gap-12 mt-24">
+          <h3
+            class="uppercase italic text-8xl text-green-500 font-sans font-extrabold"
+          >
+            talento
+          </h3>
+          <p class="text-white leading-tight max-w-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            laoreet augue sed odio sollicitudin, et dictum tortor blandit.
+          </p>
+          <div>
+            <Socials />
+          </div>
+        </div>
+        <footer class="mt-20">
+          <div class="flex gap-6">
+            <h4 class="uppercase audiencia italic text-7xl font-bold">
+              Audiencia
+            </h4>
+            <h4 class="uppercase italic text-7xl text-white font-bold">100M</h4>
+          </div>
+          <div>Polifacetico</div>
+        </footer>
+      </div>
+      <div class="flex items-end min-h-full max-w-2/5">
+        <img class="h-[500px]" src="/images/deadp.webp" alt="deadpool" />
+      </div>
+    </div>
+  </article>
+</section>
+
+<style>
+  article {
+    footer {
+      h4 {
+        &.audiencia {
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: #404040;
+          color: transparent;
+        }
+      }
+    }
+
+    .glide__slide--active {
+      @apply bg-neutral-900;
+    }
+  }
+</style>

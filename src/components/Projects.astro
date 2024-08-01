@@ -1,0 +1,241 @@
+---
+import Close from "./icons/Close.astro";
+import SectionTitle from "./organism/SectionTitle.astro";
+
+const imageTitleProject = "proyectos.svg";
+
+const PROJECTS = [
+  {
+    title: "La gala del sr. croma",
+    subtitle: "Premios a los invisibles del cine",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo semper aliquam. Nunc faucibus mollis fermentum. Quisque egestas ultrices vehicula. Phasellus eros urna, laoreet ac mattis sed, congue at lacus. Curabitur vel urna lacinia, aliquam felis vitae, porttitor nulla. Vestibulum a neque mi. Praesent congue sed enim eget commodo. Maecenas vel libero eu risus viverra accumsan. Nulla posuere purus quis commodo pellentesque. Sed blandit lectus sed mauris condimentum scelerisque. Sed quis eros semper, hendrerit odio vulputate, placerat dui. Donec turpis mauris, consectetur quis interdum sed, pellentesque at purus. Ut consectetur id diam ultricies dapibus. Quisque viverra faucibus lorem.",
+      "Pellentesque scelerisque interdum dolor ac congue. Duis venenatis magna finibus placerat congue. Sed eget euismod mauris. Sed facilisis tortor eu accumsan elementum. Etiam aliquet vitae dui non venenatis. Mauris aliquam lacus nec viverra condimentum. Fusce id mi in orci efficitur imperdiet posuere sit amet justo. Phasellus faucibus sapien tellus. Cras at nunc elementum diam tincidunt elementum. Sed vitae congue sapien. Duis maximus, magna ut ullamcorper finibus, lectus tellus sollicitudin magna, a bibendum augue ante sit amet mi. Aenean vel sapien dictum, aliquam velit sed, blandit tortor. Sed eget aliquam ex. Sed non accumsan eros, vitae consectetur diam. Curabitur aliquet id tortor eget lobortis.",
+    ],
+    image: "/images/project/01.webp",
+    link: "https://bibliovet.netlify.app",
+    info: [
+      {
+        label: "Views unicos",
+        value: "100M",
+      },
+      {
+        label: "Pico de espectadores",
+        value: "40M",
+      },
+      {
+        label: "Audiencia Media",
+        value: "260K",
+      },
+      {
+        label: "Likes de Instagram",
+        value: "5M",
+      },
+    ],
+  },
+  {
+    title: "La gala del sr. croma",
+    subtitle: "Premios a los invisibles del cine",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo semper aliquam. Nunc faucibus mollis fermentum. Quisque egestas ultrices vehicula. Phasellus eros urna, laoreet ac mattis sed, congue at lacus. Curabitur vel urna lacinia, aliquam felis vitae, porttitor nulla. Vestibulum a neque mi. Praesent congue sed enim eget commodo. Maecenas vel libero eu risus viverra accumsan. Nulla posuere purus quis commodo pellentesque. Sed blandit lectus sed mauris condimentum scelerisque. Sed quis eros semper, hendrerit odio vulputate, placerat dui. Donec turpis mauris, consectetur quis interdum sed, pellentesque at purus. Ut consectetur id diam ultricies dapibus. Quisque viverra faucibus lorem.",
+      "Pellentesque scelerisque interdum dolor ac congue. Duis venenatis magna finibus placerat congue. Sed eget euismod mauris. Sed facilisis tortor eu accumsan elementum. Etiam aliquet vitae dui non venenatis. Mauris aliquam lacus nec viverra condimentum. Fusce id mi in orci efficitur imperdiet posuere sit amet justo. Phasellus faucibus sapien tellus. Cras at nunc elementum diam tincidunt elementum. Sed vitae congue sapien. Duis maximus, magna ut ullamcorper finibus, lectus tellus sollicitudin magna, a bibendum augue ante sit amet mi. Aenean vel sapien dictum, aliquam velit sed, blandit tortor. Sed eget aliquam ex. Sed non accumsan eros, vitae consectetur diam. Curabitur aliquet id tortor eget lobortis.",
+    ],
+    image: "/images/project/02.webp",
+    link: "https://bibliovet.netlify.app",
+    info: [
+      {
+        label: "Views unicos",
+        value: "100M",
+      },
+      {
+        label: "Pico de espectadores",
+        value: "40M",
+      },
+      {
+        label: "Audiencia Media",
+        value: "260K",
+      },
+      {
+        label: "Likes de Instagram",
+        value: "5M",
+      },
+    ],
+  },
+  {
+    title: "La gala del sr. croma",
+    subtitle: "Premios a los invisibles del cine",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo semper aliquam. Nunc faucibus mollis fermentum. Quisque egestas ultrices vehicula. Phasellus eros urna, laoreet ac mattis sed, congue at lacus. Curabitur vel urna lacinia, aliquam felis vitae, porttitor nulla. Vestibulum a neque mi. Praesent congue sed enim eget commodo. Maecenas vel libero eu risus viverra accumsan. Nulla posuere purus quis commodo pellentesque. Sed blandit lectus sed mauris condimentum scelerisque. Sed quis eros semper, hendrerit odio vulputate, placerat dui. Donec turpis mauris, consectetur quis interdum sed, pellentesque at purus. Ut consectetur id diam ultricies dapibus. Quisque viverra faucibus lorem.",
+      "Pellentesque scelerisque interdum dolor ac congue. Duis venenatis magna finibus placerat congue. Sed eget euismod mauris. Sed facilisis tortor eu accumsan elementum. Etiam aliquet vitae dui non venenatis. Mauris aliquam lacus nec viverra condimentum. Fusce id mi in orci efficitur imperdiet posuere sit amet justo. Phasellus faucibus sapien tellus. Cras at nunc elementum diam tincidunt elementum. Sed vitae congue sapien. Duis maximus, magna ut ullamcorper finibus, lectus tellus sollicitudin magna, a bibendum augue ante sit amet mi. Aenean vel sapien dictum, aliquam velit sed, blandit tortor. Sed eget aliquam ex. Sed non accumsan eros, vitae consectetur diam. Curabitur aliquet id tortor eget lobortis.",
+    ],
+    image: "/images/project/03.webp",
+    link: "https://bibliovet.netlify.app",
+    info: [
+      {
+        label: "Views unicos",
+        value: "100M",
+      },
+      {
+        label: "Pico de espectadores",
+        value: "40M",
+      },
+      {
+        label: "Audiencia Media",
+        value: "260K",
+      },
+      {
+        label: "Likes de Instagram",
+        value: "5M",
+      },
+    ],
+  },
+  {
+    title: "La gala del sr. croma",
+    subtitle: "Premios a los invisibles del cine",
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo semper aliquam. Nunc faucibus mollis fermentum. Quisque egestas ultrices vehicula. Phasellus eros urna, laoreet ac mattis sed, congue at lacus. Curabitur vel urna lacinia, aliquam felis vitae, porttitor nulla. Vestibulum a neque mi. Praesent congue sed enim eget commodo. Maecenas vel libero eu risus viverra accumsan. Nulla posuere purus quis commodo pellentesque. Sed blandit lectus sed mauris condimentum scelerisque. Sed quis eros semper, hendrerit odio vulputate, placerat dui. Donec turpis mauris, consectetur quis interdum sed, pellentesque at purus. Ut consectetur id diam ultricies dapibus. Quisque viverra faucibus lorem.",
+    ],
+    image: "/images/project/04.webp",
+    link: "https://bibliovet.netlify.app",
+    info: [
+      {
+        label: "Views unicos",
+        value: "100M",
+      },
+      {
+        label: "Pico de espectadores",
+        value: "40M",
+      },
+      {
+        label: "Audiencia Media",
+        value: "260K",
+      },
+      {
+        label: "Likes de Instagram",
+        value: "5M",
+      },
+    ],
+  },
+];
+
+//
+---
+
+<section class="flex flex-col">
+  
+  <SectionTitle image={imageTitleProject} />
+
+  {
+    PROJECTS.map((value) => (
+      <article class="relative border-y-black border-t-2 last:border-b-2">
+        <button class="flex items-center group w-full pl-28 py-7 bg-white">
+          <div
+            class="absolute left-0 border-y-green-500 border-y-2 bg-green-500
+                    h-full w-[60px]
+                    group-hover:w-full transition-all duration-700"
+          />
+          <div
+            class="absolute left-0 z-10 bg-no-repeat bg-cover bg-center w-full h-full opacity-0
+                    group-hover:opacity-100 delay-700 transition-all duration-200 ease-project-timing"
+            style={`background-image: url(${value.image});`}
+          />
+          <div class="uppercase text-left z-20">
+            <h3 class="font-bold tracking-tighter text-8xl">{value.title}</h3>
+            <h4 class="text-2xl group-hover:opacity-0 transition-all duration-200 ease-project-timing">
+              {value.subtitle}
+            </h4>
+          </div>
+          <aside
+            class="absolute flex justify-center items-center z-20 right-0 border-l-[1px] border-l-black h-full w-[300px]
+                        group-hover:border-l-white transition-color delay-700 ease-project-timing"
+          >
+            <svg
+              version="1.2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 210 61"
+              width="210"
+              height="61"
+              class="arrow fill-black scale-x-[.3] scale-y-[.3] 
+                      group-hover:-translate-x-2 ease-project-timing 
+                      group-hover:fill-white"
+            >
+              <title>Arrow</title>
+
+              <path d="m6 32.5v-5h199v5z" />
+              <path d="m205.5 28l-3 4-35.5-27.6 3-3.9z" />
+              <path d="m202.5 27.5l3 3.9-35.5 27.6-3-4z" />
+            </svg>
+          </aside>
+        </button>
+      </article>
+    ))
+  }
+
+  <article class="flex w-full mt-20 border-y-2 border-y-black">
+    <article class="relative flex flex-col pt-16">
+      <div class="absolute top-0 left-0 border-b-2 border-r-2 border-black text-green-400">
+        <Close size="40" />
+      </div>
+      <div class="flex flex-col items-center gap-6 max-w-6xl px-28">
+        <h2 class="uppercase text-7xl font-bold pb-5">
+          {PROJECTS[0].title}<span class="text-green-500">.</span>
+        </h2>
+        {
+          PROJECTS[0].description.map((parrafo) => (
+            <p class=" leading-tight">{parrafo}</p>
+          ))
+        }
+      </div>
+      <div class="flex flex-col items-center bg-green-500 mt-14 py-10 gap-8">
+        <div class="flex justify-center gap-12">
+          {
+            PROJECTS[0].info.map((info) => (
+              <div class="flex flex-col items-center w-28 text-center gap-2">
+                <h4 class="text-4xl font-bold">{info.value}</h4>
+                <h5 class=" text-sm font-light opacity-80">{info.label}</h5>
+              </div>
+            ))
+          }
+        </div>
+        <button
+          class="px-8 py-2 text-xl font-bold bg-black text-green-500 rounded-3xl"
+          >LINK</button
+        >
+      </div>
+    </article>
+    <aside
+      class="min-h-full w-2/5 bg-slate-700 bg-no-repeat bg-cover"
+      style=`background-image: url(${PROJECTS[0].image});`
+    >
+    </aside>
+  </article>
+</section>
+
+<style>
+  article {
+    button:hover {
+      h3 {
+        animation: project-title 2s cubic-bezier(0.61, 0.03, 0.08, 0.99) both;
+      }
+
+      .arrow {
+        transition:
+          transform 700ms,
+          fill 700ms 700ms;
+      }
+    }
+  }
+
+  @keyframes project-title {
+    50% {
+      transform: translateX(7rem);
+    }
+
+    100% {
+      transform: translateX(10rem);
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+</style>
