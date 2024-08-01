@@ -364,13 +364,13 @@ const ImageTitleSlider = "talento.svg";
 <section>
   <SectionTitle image={ImageTitleSlider} />
 
-  <article class="flex flex-col z-30 border-b-[60px] border-b-green-500">
+  <article class="flex flex-col border-b-[60px] border-b-green-500">
     <div id="talent-glide" class="glide w-full bg-green-500">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides h-20 [&>li]:flex [&>li]:justify-center">
           {
             TALENT.map((talento, index) => (
-              <li data-index-slide={index} class="glide__slide">
+              <li data-index-slide={index} class="glide__slide transition-all duration-300 ease-in-out">
                 <img
                   class="w-20 h-auto object-cover object-top mt-2"
                   src="/images/deadp.webp"
@@ -382,7 +382,7 @@ const ImageTitleSlider = "talento.svg";
         </ul>
       </div>
     </div>
-    <div class="flex items-center justify-center w-full bg-neutral-900">
+    <div class="flex items-center justify-center w-full bg-neutral-900 z-30">
       <div class="flex flex-col items-center justify-end mr-10 h-full">
         <div class="flex flex-col items-center gap-12 mt-24">
           <h3
