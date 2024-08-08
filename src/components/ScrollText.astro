@@ -1,1 +1,164 @@
-<section>ScrollText</section>
+<section id="text-scroll" class="h-[300vh] flex justify-center">
+  <div
+    class={` flex flex-col items-center justify-center
+               [&>div>h4>span]:text-green-500 [&>div>h4]:text-4xl md:[&>div>h4]:text-8xl [&>div>h4]:font-bold
+               [&>div>h4]:text-center
+
+               [&>div>h3>span]:text-green-500 [&>div>h3]:text-2xl md:[&>div>h3]:text-5xl [&>div>h3]:font-bold
+                [&>div>h3]:text-center
+
+               w-full h-svh sticky top-0
+               [&>div]:absolute [&>div]:overflow-hidden 
+               [&>div>h4]:pb-1 [&>div>h4]:overflow-hidden
+
+  `}
+  >
+    <div id="step-1" class="gap-1 flex">
+      <h4>x</h4><h4>y</h4><h4>z</h4>
+    </div>
+
+    <div id="step-2">
+      <h4>Tres generaciones,</h4><h4>tres coordenas,</h4><h4>
+        tres caminos<span>...</span>
+      </h4>
+    </div>
+
+    <div id="step-3" class="flex flex-col gap-8">
+      <h3><span>...</span>para Proplayers</h3>
+      <h4 class="w-full px-4 md:max-w-7xl">
+        Tu carrera no terminará cuando acabe la partida<span>.</span>
+      </h4>
+    </div>
+
+    <div id="step-4" class="flex flex-col gap-8">
+      <h3><span>...</span>para Creadores</h3>
+      <h4 class="w-full px-4 md:max-w-4xl">
+        Tu contenido <br /> no trendrá límites<span>.</span>
+      </h4>
+    </div>
+
+    <div id="step-5" class="flex flex-col gap-8">
+      <h3><span>...</span>para Influencers</h3>
+      <h4 class="w-full px-4 md:max-w-5xl">
+        El valor de tu imagen no se medirá en likes<span>.</span>
+      </h4>
+    </div>
+  </div>
+</section>
+
+<style>
+  #step-1 {
+    h4 {
+      @apply translate-y-full;
+    }
+  }
+
+  #step-2 {
+    h4 {
+      @apply translate-y-[300%];
+    }
+  }
+
+  #step-3,
+  #step-4,
+  #step-5 {
+    h3 {
+      @apply opacity-0;
+      @apply translate-y-[100%];
+    }
+    h4 {
+      @apply translate-y-[100%];
+    }
+  }
+</style>
+
+<script>
+  import { timeline, scroll } from "motion";
+
+  const sequence = [
+    [
+      "#step-1 h4:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 1 },
+    ],
+    [
+      "#step-1 h4:nth-child(2)",
+      { transform: "translateY(0%)" },
+      { duration: 1, at: "-0.65" },
+    ],
+    [
+      "#step-1 h4:nth-child(3)",
+      { transform: "translateY(0%)" },
+      { duration: 1, at: "-0.4" },
+    ],
+    [
+      "#step-1 h4:first-child",
+      { transform: "translateY(-100%)" },
+      { duration: 1, at: "+0.2" },
+    ],
+    [
+      "#step-1 h4:nth-child(2)",
+      { transform: "translateY(-100%)" },
+      { duration: 1, at: "-0.72" },
+    ],
+    [
+      "#step-1 h4:nth-child(3)",
+      { transform: "translateY(-100%)" },
+      { duration: 1, at: "-0.6" },
+    ],
+
+    // Animacion de step 2
+    [
+      "#step-2 h4:first-child",
+      { transform: "translateY(0%)" },
+      { duration: 1.5 },
+    ],
+    [
+      "#step-2 h4:nth-child(2)",
+      { transform: "translateY(0%)" },
+      { duration: 1.5, at: "-1.2" },
+    ],
+    [
+      "#step-2 h4:nth-child(3)",
+      { transform: "translateY(0%)" },
+      { duration: 1.5, at: "-1" },
+    ],
+    ["#step-2", { opacity: "0" }, { duration: 1 }],
+
+    // Animacion step 3
+    ["#step-3 h3", { opacity: "1" }, { duration: 1, at: "+1" }],
+    ["#step-3 h3", { transform: "translateY(0%)" }, { duration: 1 }],
+    [
+      "#step-3 h4",
+      { transform: "translateY(0%)" },
+      { duration: 1, at: "-0.6" },
+    ],
+    ["#step-3", { opacity: "0" }, { duration: 1, at: "+0.4" }],
+
+    // Animacion step 4
+    ["#step-4 h3", { opacity: "1" }, { duration: 0.4 }],
+    ["#step-4 h3", { transform: "translateY(0%)" }, { duration: 1.2 }],
+    [
+      "#step-4 h4",
+      { transform: "translateY(0%)" },
+      { duration: 1.2, at: "-0.6" },
+    ],
+    ["#step-4", { opacity: "0" }, { duration: 1, at: "+0.4" }],
+
+    // Animacion step 5
+    ["#step-5 h3", { opacity: "1" }, { duration: 0.4 }],
+    ["#step-5 h3", { transform: "translateY(0%)" }, { duration: 0.8 }],
+    [
+      "#step-5 h4",
+      { transform: "translateY(0%)" },
+      { duration: 0.8, at: "-0.6" },
+    ],
+  ];
+
+  const onScroll = timeline(sequence);
+
+  scroll(onScroll, {
+    target: document.querySelector("#text-scroll"),
+    offset: ["-350px", "end end"],
+  });
+</script>

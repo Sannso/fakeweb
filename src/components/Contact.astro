@@ -1,1 +1,114 @@
-<section>Contact</section>
+<section
+  class="flex items-center w-full px-10 mb:px-28 h-[50vh] overflow-hidden mb-16"
+>
+  <div id="contact-form" class="relative w-full mx-auto md:w-auto md:mx-0 z-10">
+    <form
+      method="post"
+      target="_self"
+      class={`flex flex-col gap-8 w-full md:w-[600px] h-[460px] border-[1.5px] border-black rounded-lg p-12 bg-white
+                    [&>input]:border-b-[1.3px] [&>input]:border-b-neutral-300 [&>input]:p-2 [&>input]:text-sm [&>input]:outline-0
+                    [&>input]:transition-all [&>input]:translate-y-[100%] [&>input]:delay-700 [&>input]:opacity-0 [&>input]:duration-1000
+                    translate-y-[120%] transition-all duration-1000`}
+    >
+      <input type="text" placeholder="NOMBRE" class="w-3/4 md:w-2/4" />
+      <input type="number" placeholder="TELEFONO" class="w-3/4 md:w-2/4" />
+      <input type="email" placeholder="EMAIL" class="w-3/4 md:w-2/4" />
+      <input type="text" placeholder="MENSAJE" class="w-full md:w-3/4" />
+    </form>
+
+    <button
+      class="uppercase absolute ml-12 -mt-20 px-4 py-2 rounded-lg border-2 border-green-500 bg-white font-bold hover:bg-green-500 opacity-0"
+      >enviar</button
+    >
+  </div>
+
+  <div
+    id="contact-div-button"
+    class={`absolute md:static flex flex-col z-20
+            [&>button]:transition-all [&>button]:ease-out [&>button]:duration-1000
+            [&>div]:transition-all [&>div]:ease-out [&>div]:duration-1000 `}
+  >
+    <button
+      id="contact-button"
+      class={`text-7xl md:text-7xl font-bold text-left tracking-tighter
+                 text-green-500 w-full md:w-[500px] h-fit 
+                 underline md:no-underline hover:underline`}
+    >
+      Hablemos.
+    </button>
+
+    <div
+      id="contact-underline"
+      class="absolute bottom-0 w-[327px] h-[6.5px] bg-green-500 invisible"
+    >
+    </div>
+  </div>
+</section>
+
+<style>
+  #contact-form {
+    button {
+      transition:
+        opacity 2000ms,
+        color 700ms;
+    }
+  }
+  .text-fade-out {
+    @apply no-underline;
+    @apply -translate-x-16;
+    @apply -translate-y-16;
+    @apply opacity-0;
+  }
+
+  .underline-fade-out {
+    @apply visible;
+    @apply translate-x-32;
+    @apply opacity-0;
+    @apply w-[200px];
+  }
+
+  .div-zfix{
+    @apply z-0;
+  }
+
+  .form-fade-in {
+    @apply translate-y-[0%];
+  }
+
+  .form-button-fade-in {
+    @apply opacity-100;
+  }
+
+  .form-input-fade-in {
+    @apply opacity-100;
+    @apply translate-y-[0%];
+  }
+</style>
+
+<script>
+  // Elementos del texto
+  const $contactDivButton = document.querySelector(
+    "#contact-div-button"
+  ) as HTMLElement;
+  const $contactButton = document.querySelector(
+    "#contact-button"
+  ) as HTMLElement;
+  const $contactUnderline = document.querySelector(
+    "#contact-underline"
+  ) as HTMLElement;
+
+  // Elementos del formulario
+  const $contactForm = document.querySelector("#contact-form") as HTMLElement;
+  const $form = $contactForm.querySelector("form");
+  const $inputs = $contactForm.querySelectorAll("input");
+  const $button = $contactForm.querySelector("button");
+
+  $contactButton.addEventListener("click", (e) => {
+    $contactButton.classList.add("text-fade-out");
+    $contactUnderline.classList.add("underline-fade-out");
+    $contactDivButton.classList.add("div-zfix");
+    $form?.classList.add("form-fade-in");
+    $button?.classList.add("form-button-fade-in");
+    $inputs.forEach((input) => input.classList.add("form-input-fade-in"));
+  });
+</script>

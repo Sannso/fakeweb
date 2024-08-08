@@ -1,1 +1,177 @@
-<section>Team</section>
+---
+import Close from "./icons/Close.astro";
+---
+
+<section class="w-full md:h-[110vh] flex items-center overflow-hidden group realtive md:mt-10 ">
+  <div
+    id="ubiqados"
+    class={`flex -ml-20 
+      group-hover:-translate-x-2/4 transition-all duration-[8000ms] ease-ubiqados-timing [&>img]:w-[1200vw] [&>img]:max-w-[1200vw] md:[&>img]:w-[380vw] md:[&>img]:max-w-[380vw]`}
+  >
+    <img src="/images/ubiqados.svg" alt="ubiqados" />
+    <img src="/images/ubiqados.svg" alt="ubiqados" />
+  </div>
+  <!-- -->
+
+  <div
+    class="absolute w-full h-full md:h-[110vh] -mt-16 md:mt-0 flex items-center justify-center overflow-hidden "
+  >
+    <div
+      id="team-circle"
+      class={`uppercase text-transparent rounded-full border-[1.5px] size-72 border-green-500
+                 hover:text-black hover:bg-green-500
+                 font-bold px-20 text-2xl leading-none
+                 flex items-center justify-center`}
+    >
+      <span class="text-center circle-text"
+        >Quienes somos?</span
+      >
+    </div>
+
+    <div
+      id="team-info"
+      class={`grid grid-cols-2 md:flex md:justify-between items-center absolute invisible
+                                w-full h-full px-10
+                                [&>article]:flex [&>article]:flex-col [&>article]:gap-10 [&>article]:px-3 [&>article]:md:px-0 
+                                [&>article]:opacity-0 [&>article]:transition-all [&>article]:duration-1000 [&>article]:delay-300
+
+                                [&>article>div]:flex [&>article>div]:flex-col
+                                [&>article>div>h3]:text-3xl
+                                [&>article>div>h3]:md:text-5xl [&>article>div>h3]:font-bold [&>article>div>h3]:tracking-tight
+                                [&>article>div>h3]:uppercase [&>article>div>h3]:text-white
+
+                                [&>article>div>h4]:text-xl [&>article>div>h4]:md:text-3xl`}
+    >
+      <button
+        id="close-team"
+        class={`absolute border-2 border-black text-black
+               hover:bg-black hover:text-white transition-colors
+               -mt-[700px] left-10 md:-mt-[580px]`}
+      >
+        <Close size="40" />
+      </button>
+      <article class={`translate-x-20`}>
+        <div class="left-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            hombre croma
+          </h3><h4>Director general</h4>
+        </div>
+        <div class="left-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            mujer croma
+          </h3><h4>Supervisor creativo</h4>
+        </div>
+        <div class="left-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            niño croma
+          </h3><h4>Productora</h4>
+        </div>
+        <div class="left-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            niña croma
+          </h3><h4>Director de operaciones</h4>
+        </div>
+      </article>
+      <div
+        class={`hidden md:flex items-center justify-center
+                border-[1px] border-black size-[500px]
+                [&>span]:text-9xl [&>span]:font-bold 
+                `}
+      >
+        <span>FOTO</span>
+      </div>
+      <article class="-translate-x-20">
+        <div class="right-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            gato croma
+          </h3><h4>Diseñador gráfico</h4>
+        </div>
+        <div class="right-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            perro croma
+          </h3><h4>Director creativo y de arte</h4>
+        </div>
+        <div class="right-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            sanss croma
+          </h3><h4>Desarrollador</h4>
+        </div>
+        <div class="right-text-hover group/text">
+          <h3 class="group-hover/text:text-black transition-colors">
+            midu croma
+          </h3><h4>Creador</h4>
+        </div>
+      </article>
+    </div>
+  </div>
+  
+</section>
+
+<style>
+  #team-circle {
+    transition:
+      color,
+      background-color 300ms,
+      transform 700ms;
+
+    .circle-text {
+      transition: color 300ms;
+    }
+  }
+
+  .left-text-hover {
+    @apply hover:translate-x-20;
+    @apply transition-all;
+    @apply duration-500;
+  }
+
+  .right-text-hover {
+    @apply hover:-translate-x-20;
+    @apply transition-all;
+    @apply duration-500;
+    @apply text-right;
+  }
+
+  .circle-zoom-in {
+    @apply scale-[8];
+    @apply bg-green-500;
+    @apply text-opacity-0;
+  }
+
+  .text-ease-out {
+    @apply opacity-0;
+    @apply hidden
+  }
+
+  .team-visible {
+    @apply visible;
+  }
+
+  .text-fade-in {
+    @apply opacity-100;
+    @apply translate-x-[0%];
+  }
+</style>
+
+<script>
+  const $teamCircle = document.querySelector("#team-circle");
+  const $circleText = $teamCircle?.querySelector("span");
+  const $teamInfo = document.querySelector("#team-info");
+  const $sideTexts = $teamInfo?.querySelectorAll("article");
+
+  $teamCircle?.addEventListener("click", () => {
+    $teamCircle.classList.add("circle-zoom-in");
+    $circleText!.classList.add("text-ease-out");
+    $teamInfo!.classList.add("team-visible");
+    $sideTexts!.forEach((text) => text.classList.add("text-fade-in"));
+  });
+
+  const $closeButton = document.querySelector("#close-team") as HTMLElement;
+
+  $closeButton.addEventListener("click", () => {
+    $teamCircle!.classList.toggle("circle-zoom-in");
+    $circleText!.classList.toggle("text-ease-out");
+    $teamInfo!.classList.toggle("team-visible");
+    $sideTexts!.forEach((text) => text.classList.toggle("text-fade-in"));
+  });
+</script>

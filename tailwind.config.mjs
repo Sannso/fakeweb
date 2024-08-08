@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			transitionTimingFunction: {
-				"project-timing": "cubic-bezier(0.53, 0.13, 0.09, 0.99)"
+				"project-timing": "cubic-bezier(0.53, 0.13, 0.09, 0.99)",
+				"ubiqados-timing": "cubic-bezier(0.32, 0.01, 0.64, 0.99)",
 			}
 		},
 	},

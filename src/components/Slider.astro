@@ -342,11 +342,13 @@ const ImageTitleSlider = "talento.svg";
 <script>
   import Glide from "@glidejs/glide";
 
+  const perView = window.screen.width > 600 ? 13 : 5; 
+
   const $slider = document.querySelector("#talent-glide");
   const glide = new Glide(".glide", {
     type: "carousel",
     startAt: 0,
-    perView: 13,
+    perView: perView,
     focusAt: "center",
   }).mount();
 
@@ -363,16 +365,19 @@ const ImageTitleSlider = "talento.svg";
 
 <section>
   <SectionTitle image={ImageTitleSlider} />
-
+  
   <article class="flex flex-col border-b-[60px] border-b-green-500">
-    <div id="talent-glide" class="glide w-full bg-green-500">
+    <div id="talent-glide" class="glide w-full bg-green-500 cursor-pointer">
       <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides h-20 [&>li]:flex [&>li]:justify-center">
+        <ul class="glide__slides h-14 md:h-20 [&>li]:flex [&>li]:justify-center">
           {
             TALENT.map((talento, index) => (
-              <li data-index-slide={index} class="glide__slide transition-all duration-300 ease-in-out">
+              <li
+                data-index-slide={index}
+                class="glide__slide transition-all duration-300 ease-in-out w-32"
+              >
                 <img
-                  class="w-20 h-auto object-cover object-top mt-2"
+                  class="w-20 h-auto object-cover object-top mt-2 ml-4 md:ml-2"
                   src="/images/deadp.webp"
                   alt="deadpool"
                 />
@@ -382,36 +387,48 @@ const ImageTitleSlider = "talento.svg";
         </ul>
       </div>
     </div>
-    <div class="flex items-center justify-center w-full bg-neutral-900 z-30">
-      <div class="flex flex-col items-center justify-end mr-10 h-full">
-        <div class="flex flex-col items-center gap-12 mt-24">
+
+    <div
+      class="relative flex items-center justify-center w-full bg-neutral-900 z-30"
+    >
+      <div class="flex flex-col items-center justify-end md:mr-10 h-full">
+        <div class="flex flex-col items-center gap-12 mt-14 md:mt-24">
           <h3
-            class="uppercase italic text-8xl text-green-500 font-sans font-extrabold"
+            class="uppercase italic text-6xl md:text-8xl text-green-500 font-sans font-extrabold"
           >
             talento
           </h3>
-          <p class="text-white leading-tight max-w-lg">
+          <p class="text-white leading-tight max-w-[19rem] md:max-w-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             laoreet augue sed odio sollicitudin, et dictum tortor blandit.
           </p>
-          <div>
+          <div class="w-[300px] md:w-full ">
             <Socials />
           </div>
         </div>
-        <footer class="mt-20">
+        <footer class="flex flex-col mt-14 md:mt-20 mb-8">
           <div class="flex gap-6">
-            <h4 class="uppercase audiencia italic text-7xl font-bold">
+            <h4 class="uppercase audiencia italic text-5xl md:text-7xl font-bold">
               Audiencia
             </h4>
-            <h4 class="uppercase italic text-7xl text-white font-bold">100M</h4>
+            <h4 class="uppercase italic text-5xl md:text-7xl text-white font-bold">100M</h4>
           </div>
-          <div>Polifacetico</div>
+          <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <span class="uppercase text-sm text-white whitespace-nowrap">
+              {" | Polifacético".repeat(20)}
+            </span>
+          </div>
         </footer>
       </div>
-      <div class="flex items-end min-h-full max-w-2/5">
-        <img class="h-[500px]" src="/images/deadp.webp" alt="deadpool" />
+      <div class="absolute h-full w-full md:h-auto md:w-auto md:static overflow-hidden">
+        <img
+          class="w-56 h-auto object-cover absolute -bottom-2 -right-40 md:right-auto  "
+          src="/images/deadp.webp"
+          alt="deadpool"
+        />
       </div>
     </div>
+
   </article>
 </section>
 

@@ -118,104 +118,156 @@ const PROJECTS = [
   },
 ];
 
-//
 ---
 
-<section class="flex flex-col">
-  
+<script>
+  const $container = document.querySelector(
+    "#project-container"
+  ) as HTMLElement;
+  const $listButtons = document.querySelector("#project-list") as HTMLElement;
+  const $buttons = $listButtons.querySelectorAll("button");
+
+  $buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      $container.classList.add("slide-in");
+    });
+  });
+
+  const $closeButton = document.querySelector(
+    "#close-proyect-info"
+  ) as HTMLElement;
+
+  $closeButton.addEventListener("click", (e) => {
+    $container.classList.toggle("slide-in");
+  });
+</script>
+
+<section class="flex flex-col w-full overflow-hidden">
   <SectionTitle image={imageTitleProject} />
 
-  {
-    PROJECTS.map((value) => (
-      <article class="relative border-y-black border-t-2 last:border-b-2">
-        <button class="flex items-center group w-full pl-28 py-7 bg-white">
-          <div
-            class="absolute left-0 border-y-green-500 border-y-2 bg-green-500
-                    h-full w-[60px]
-                    group-hover:w-full transition-all duration-700"
-          />
-          <div
-            class="absolute left-0 z-10 bg-no-repeat bg-cover bg-center w-full h-full opacity-0
-                    group-hover:opacity-100 delay-700 transition-all duration-200 ease-project-timing"
-            style={`background-image: url(${value.image});`}
-          />
-          <div class="uppercase text-left z-20">
-            <h3 class="font-bold tracking-tighter text-8xl">{value.title}</h3>
-            <h4 class="text-2xl group-hover:opacity-0 transition-all duration-200 ease-project-timing">
-              {value.subtitle}
-            </h4>
-          </div>
-          <aside
-            class="absolute flex justify-center items-center z-20 right-0 border-l-[1px] border-l-black h-full w-[300px]
-                        group-hover:border-l-white transition-color delay-700 ease-project-timing"
-          >
-            <svg
-              version="1.2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 210 61"
-              width="210"
-              height="61"
-              class="arrow fill-black scale-x-[.3] scale-y-[.3] 
-                      group-hover:-translate-x-2 ease-project-timing 
-                      group-hover:fill-white"
+  <div id="project-container" class="flex">
+    <div id="project-list" class="flex flex-col w-screen flex-shrink-0">
+      {
+        PROJECTS.map((value, index) => (
+          <article class="relative border-y-black border-t-2 last:border-b-2">
+            <button
+              data-button-index={index}
+              class="flex items-center group w-full pl-14 md:pl-28 py-7 bg-white"
             >
-              <title>Arrow</title>
-
-              <path d="m6 32.5v-5h199v5z" />
-              <path d="m205.5 28l-3 4-35.5-27.6 3-3.9z" />
-              <path d="m202.5 27.5l3 3.9-35.5 27.6-3-4z" />
-            </svg>
-          </aside>
-        </button>
-      </article>
-    ))
-  }
-
-  <article class="flex w-full mt-20 border-y-2 border-y-black">
-    <article class="relative flex flex-col pt-16">
-      <div class="absolute top-0 left-0 border-b-2 border-r-2 border-black text-green-400">
-        <Close size="40" />
-      </div>
-      <div class="flex flex-col items-center gap-6 max-w-6xl px-28">
-        <h2 class="uppercase text-7xl font-bold pb-5">
-          {PROJECTS[0].title}<span class="text-green-500">.</span>
-        </h2>
-        {
-          PROJECTS[0].description.map((parrafo) => (
-            <p class=" leading-tight">{parrafo}</p>
-          ))
-        }
-      </div>
-      <div class="flex flex-col items-center bg-green-500 mt-14 py-10 gap-8">
-        <div class="flex justify-center gap-12">
-          {
-            PROJECTS[0].info.map((info) => (
-              <div class="flex flex-col items-center w-28 text-center gap-2">
-                <h4 class="text-4xl font-bold">{info.value}</h4>
-                <h5 class=" text-sm font-light opacity-80">{info.label}</h5>
+              <div
+                class="absolute left-0 border-y-green-500 border-y-2 bg-green-500
+                        h-full w-10 md:w-[60px]
+                        group-hover:w-full transition-all duration-700"
+              />
+              <div
+                class="absolute left-0 z-10 bg-no-repeat bg-cover bg-center w-full h-full opacity-0
+                        group-hover:opacity-100 delay-700 transition-all duration-200 ease-project-timing"
+                style={`background-image: url(${value.image});`}
+              />
+              <div class="uppercase text-left z-20">
+                <h3 class="font-bold tracking-tighter text-3xl md:text-8xl">
+                  {value.title}
+                </h3>
+                <h4 class="text-md md:text-2xl group-hover:opacity-0 transition-all duration-200 ease-project-timing">
+                  {value.subtitle}
+                </h4>
               </div>
-            ))
-          }
-        </div>
-        <button
-          class="px-8 py-2 text-xl font-bold bg-black text-green-500 rounded-3xl"
-          >LINK</button
-        >
-      </div>
-    </article>
-    <aside
-      class="min-h-full w-2/5 bg-slate-700 bg-no-repeat bg-cover"
-      style=`background-image: url(${PROJECTS[0].image});`
+              <aside
+                class="absolute flex justify-center items-center z-20 right-0 border-l-[1px] border-l-black h-full w-12 md:w-[300px]
+                            group-hover:border-l-white transition-color delay-700 ease-project-timing"
+              >
+                <svg
+                  version="1.2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 210 61"
+                  width="210"
+                  height="61"
+                  class="arrow fill-black scale-x-[.3] scale-y-[.8] md:scale-y-[.3]
+                          group-hover:-translate-x-1 md:group-hover:-translate-x-2 ease-project-timing 
+                          group-hover:fill-white"
+                >
+                  <title>Arrow</title>
+
+                  <path d="m6 32.5v-5h199v5z" />
+                  <path d="m205.5 28l-3 4-35.5-27.6 3-3.9z" />
+                  <path d="m202.5 27.5l3 3.9-35.5 27.6-3-4z" />
+                </svg>
+              </aside>
+            </button>
+          </article>
+        ))
+      }
+    </div>
+
+    <article
+      id="project-description"
+      class="flex w-screen flex-shrink-0 border-y-2 border-y-black"
     >
-    </aside>
-  </article>
+      <article class="relative w-full md:w-auto flex flex-col pt-8 md:pt-16 bg-white">
+        <div
+          id="close-proyect-info"
+          class="absolute top-0 left-0 border-b-2 border-r-2 border-black text-green-400 hover:bg-black hover:text-white"
+        >
+          <Close size="40" />
+        </div>
+        <div class="flex flex-col items-center gap-6 w-full md:max-w-6xl px-4 md:px-28">
+          <h2 class="uppercase text-4xl md:text-7xl font-bold md:pb-5 text-center">
+            {PROJECTS[0].title}<span class="text-green-500">.</span>
+          </h2>
+          <div class="h-52 overflow-y-auto md:overflow-hidden md:h-auto flex flex-col gap-6 ">
+            {
+              PROJECTS[0].description.map((parrafo) => (
+                <p class="leading-tight">{parrafo}</p>
+              ))
+            }
+          </div>
+          
+        </div>
+        <div class="flex flex-col items-center bg-green-500 mt-8 md:mt-14 py-10 gap-8">
+          <div class="flex flex-wrap justify-center gap-4 md:gap-12 ">
+            {
+              PROJECTS[0].info.map((info) => (
+                <div class="flex flex-col items-center w-20 md:w-28 text-center gap-2">
+                  <h4 class="text-2xl md:text-4xl font-bold">{info.value}</h4>
+                  <h5 class="text-xs md:text-sm md:font-light opacity-80">{info.label}</h5>
+                </div>
+              ))
+            }
+          </div>
+          <button
+            class="px-8 py-2 text-xl font-bold bg-black text-green-500 rounded-3xl hover:bg-white hover:text-black transition-colors"
+            >LINK</button
+          >
+        </div>
+      </article>
+      <aside
+        class="hidden md:block min-h-full w-2/5 bg-slate-700 bg-no-repeat bg-cover"
+        style=`background-image: url(${PROJECTS[0].image});`
+      >
+      </aside>
+    </article>
+  </div>
 </section>
 
 <style>
+  #project-container {
+    @apply transition-all;
+    @apply duration-700;
+    @apply ease-project-timing;
+
+    &.slide-in {
+      transform: translateX(-100vw);
+    }
+  }
+
   article {
     button:hover {
       h3 {
-        animation: project-title 2s cubic-bezier(0.61, 0.03, 0.08, 0.99) both;
+        animation: project-title-sm 2s cubic-bezier(0.61, 0.03, 0.08, 0.99) both;
+        @media (min-width: 700px) {
+          animation: project-title-md 2s cubic-bezier(0.61, 0.03, 0.08, 0.99)
+            both;
+        }
       }
 
       .arrow {
@@ -226,7 +278,7 @@ const PROJECTS = [
     }
   }
 
-  @keyframes project-title {
+  @keyframes project-title-md {
     50% {
       transform: translateX(7rem);
     }
@@ -235,6 +287,19 @@ const PROJECTS = [
       transform: translateX(10rem);
       -webkit-text-stroke-color: white;
       -webkit-text-stroke-width: 2px;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  @keyframes project-title-sm {
+    50% {
+      transform: translateX(0.1rem);
+    }
+
+    100% {
+      transform: translateX(0.3rem);
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 0.5px;
       -webkit-text-fill-color: transparent;
     }
   }

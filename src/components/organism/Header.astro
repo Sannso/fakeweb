@@ -1,6 +1,6 @@
 ---
 import Fish from "@components/icons/Fish.astro";
-import Mute from "@components/icons/Mute.astro";
+import Sound from "@components/organism/Sound.astro";
 import World from "@components/icons/World.astro";
 ---
 
@@ -30,13 +30,15 @@ import World from "@components/icons/World.astro";
 
 <header
   id="header-landing"
-  class="flex justify-between fixed top-0 w-full z-50 px-5 py-4"
+  class="flex justify-between fixed top-0 w-full z-50 px-5 py-3 md:py-4"
 >
-  <Fish size="70" />
-  <section class="flex h-7 gap-10 mt-2 text-current">
-    <p class="uppercase">agencia de talento multiplataforma</p>
+  <div class="-mt-2 -ml-3 md:m-0">
+    <Fish size="70" />
+  </div>
+  <section class="flex flex-row-reverse md:flex-row h-7 gap-3 md:gap-10 mt-2 text-current">
+    <p class="hidden md:block uppercase">agencia de talento multiplataforma</p>
     <div>
-      <Mute />
+      <Sound />
     </div>
     <div class="flex">
       <World />

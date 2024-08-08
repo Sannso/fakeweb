@@ -1,0 +1,28 @@
+---
+import Mute from "@components/icons/Mute.astro";
+import Unmute from "@components/icons/Unmute.astro";
+---
+
+<script>
+    const $button = document.querySelector("#mute-button")
+    const $mute = document.querySelector("#mute")
+    const $unmute = document.querySelector("#un-mute")
+    
+    $button?.addEventListener("click", (e)=>{
+        $mute?.classList.toggle("toggle-icon")
+        $unmute?.classList.toggle("toggle-icon")
+    })
+</script>
+
+<button id="mute-button">
+  <div id="mute">
+    <Mute />
+  </div>
+  <div id="un-mute" class="toggle-icon"><Unmute /></div>
+</button>
+
+<style>
+    .toggle-icon{
+        display: none;
+    }
+</style>
