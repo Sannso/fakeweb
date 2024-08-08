@@ -4,14 +4,14 @@ import Unmute from "@components/icons/Unmute.astro";
 ---
 
 <script>
-    const $button = document.querySelector("#mute-button")
-    const $mute = document.querySelector("#mute")
-    const $unmute = document.querySelector("#un-mute")
-    
-    $button?.addEventListener("click", (e)=>{
-        $mute?.classList.toggle("toggle-icon")
-        $unmute?.classList.toggle("toggle-icon")
-    })
+  const $button = document.querySelector("#mute-button");
+  const $mute = document.querySelector("#mute");
+  const $unmute = document.querySelector("#un-mute");
+
+  $button?.addEventListener("click", () => {
+    $mute?.classList.toggle("toggle-icon");
+    $unmute?.classList.toggle("toggle-icon");
+  });
 </script>
 
 <button id="mute-button">
@@ -22,7 +22,7 @@ import Unmute from "@components/icons/Unmute.astro";
 </button>
 
 <style>
-    .toggle-icon{
-        display: none;
-    }
+  .toggle-icon {
+    display: none;
+  }
 </style>

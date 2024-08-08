@@ -128,7 +128,7 @@ const PROJECTS = [
   const $buttons = $listButtons.querySelectorAll("button");
 
   $buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", () => {
       $container.classList.add("slide-in");
     });
   });
@@ -137,7 +137,7 @@ const PROJECTS = [
     "#close-proyect-info"
   ) as HTMLElement;
 
-  $closeButton.addEventListener("click", (e) => {
+  $closeButton.addEventListener("click", () => {
     $container.classList.toggle("slide-in");
   });
 </script>
